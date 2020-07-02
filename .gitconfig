@@ -10,6 +10,7 @@
 	autocrlf = true
 	safecrlf = warn
 	quotepath = off
+	longpaths = true
 [gui]
 	recentrepo = C:/Users/Z156/Downloads/git_tutorial/git_tutorial/work/hello.html/hello
 [alias]

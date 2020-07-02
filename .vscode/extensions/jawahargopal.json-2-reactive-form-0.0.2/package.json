@@ -1,0 +1,111 @@
+{
+	"name": "json-2-reactive-form",
+	"displayName": "JSON to Reactive Form",
+	"description": "Paste JSON as Angular Reactive Form",
+	"version": "0.0.2",
+	"icon": "icon.png",
+	"publisher": "jawahargopal",
+	"author": {
+		"name": "jawahar gopal",
+		"email": "gjawahargopal@gmail.com"
+	},
+	"contributors": [
+		{
+			"name": "Vinothkumar Arputharaj",
+			"email": "vino4all@gmail.com",
+			"url": "https://github.com/vino4all"
+		}
+	],
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jawahargopal/paste-json-as-angular-reactive-form"
+	},
+	"bugs": {
+		"url": "https://github.com/jawahargopal/paste-json-as-angular-reactive-form/issues"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:json2ReactiveForm.fromClipboard",
+		"onCommand:json2ReactiveForm.fromSelection",
+		"onCommand:json2ReactiveForm.fromFile",
+		"onCommand:json2ReactiveForm.pasteFormHere"
+	],
+	"keywords": [
+		"json",
+		"converter",
+		"reactive form",
+		"form builder"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "json2ReactiveForm.fromClipboard",
+				"title": "JSON to Reactive Form: Clipboard"
+			},
+			{
+				"command": "json2ReactiveForm.fromSelection",
+				"title": "JSON to Reactive Form: Selection"
+			},
+			{
+				"command": "json2ReactiveForm.fromFile",
+				"title": "JSON to Reactive Form: File"
+			},
+			{
+				"command": "json2ReactiveForm.pasteFormHere",
+				"title": "JSON to Reactive Form: Cursor Position"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "json2ReactiveForm.fromClipboard",
+					"group": "json2ReactiveForm@1"
+				},
+				{
+					"when": "editorHasSelection",
+					"command": "json2ReactiveForm.fromSelection",
+					"group": "json2ReactiveForm@1"
+				},
+				{
+					"when": "resourceExtname == .json",
+					"command": "json2ReactiveForm.fromFile",
+					"group": "json2ReactiveForm@1"
+				},
+				{
+					"when": "resourceExtname == .ts",
+					"command": "json2ReactiveForm.pasteFormHere",
+					"group": "json2ReactiveForm@1"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/clipboardy": "^1.1.0",
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25",
+		"tslint": "^5.8.0",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"clipboardy": "^1.2.3"
+	},
+	"__metadata": {
+		"id": "c187ff6a-9129-4b6c-b581-9848968fb833",
+		"publisherId": "96bc65e4-5533-4fff-846b-ac6a0f88358e",
+		"publisherDisplayName": "jawahar gopal"
+	}
+}
